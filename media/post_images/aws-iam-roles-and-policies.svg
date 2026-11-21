@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 620" width="880" height="620" role="img" aria-labelledby="title description">
+  <title id="title">AWS IAM roles and policies</title>
+  <desc id="description">Identity-based policies can apply to IAM users, groups, and roles. Managed policies can be reused. Inline policies belong to one identity. A user can inherit group policies. A role's trust policy controls who can assume it. AWS STS issues temporary credentials for the role session, and AWS evaluates applicable policies for each request.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52657b"/>
+    </marker>
+    <style>
+      text { font-family: system-ui, -apple-system, sans-serif; fill: #15263c; }
+      .title { font-size: 28px; font-weight: 700; }
+      .label { font-size: 18px; font-weight: 700; }
+      .detail { font-size: 15px; fill: #344d66; }
+      .connector { fill: none; stroke: #52657b; stroke-width: 2; }
+      .arrow { marker-end: url(#arrow); }
+      .node { stroke-width: 1.5; }
+    </style>
+  </defs>
+  <rect width="880" height="620" rx="20" fill="#f4f7fb"/>
+  <text class="title" x="440" y="52" text-anchor="middle">AWS IAM roles and policies</text>
+  <g class="connector">
+    <path d="M238 170 V191 H642 V170"/>
+    <path d="M440 191 V211 H166 M440 211 H714"/>
+    <path class="arrow" d="M166 211 V231"/>
+    <path class="arrow" d="M440 211 V231"/>
+    <path class="arrow" d="M714 211 V231"/>
+    <path class="arrow" d="M440 308 V340 H166 V308"/>
+    <path class="arrow" d="M714 308 V376"/>
+    <path class="arrow" d="M714 446 V538"/>
+    <path class="arrow" d="M166 340 V538"/>
+    <path class="arrow" d="M562 411 H592"/>
+  </g>
+  <rect class="node" x="64" y="92" width="348" height="78" rx="12" fill="#fff3d7" stroke="#c6a258"/>
+  <text class="label" x="238" y="119" text-anchor="middle">Managed policies</text>
+  <text class="detail" x="238" y="141" text-anchor="middle">Reusable across users, groups, and roles</text>
+  <rect class="node" x="468" y="92" width="348" height="78" rx="12" fill="#fff3d7" stroke="#c6a258"/>
+  <text class="label" x="642" y="119" text-anchor="middle">Inline policies</text>
+  <text class="detail" x="642" y="141" text-anchor="middle">Embedded in a single user, group, or role</text>
+  <rect class="node" x="44" y="231" width="244" height="77" rx="12" fill="#dceafb" stroke="#729ccc"/>
+  <text class="label" x="166" y="258" text-anchor="middle">IAM user</text>
+  <text class="detail" x="166" y="280" text-anchor="middle">Can have permissions directly</text>
+  <rect class="node" x="318" y="231" width="244" height="77" rx="12" fill="#dceafb" stroke="#729ccc"/>
+  <text class="label" x="440" y="258" text-anchor="middle">IAM group</text>
+  <text class="detail" x="440" y="280" text-anchor="middle">Members inherit its permissions</text>
+  <rect class="node" x="592" y="231" width="244" height="77" rx="12" fill="#e9e1fa" stroke="#9b82bf"/>
+  <text class="label" x="714" y="258" text-anchor="middle">IAM role</text>
+  <text class="detail" x="714" y="280" text-anchor="middle">Policies define role permissions</text>
+  <text class="detail" x="305" y="362" text-anchor="middle">Group membership</text>
+  <rect class="node" x="318" y="376" width="244" height="70" rx="12" fill="#dff1e9" stroke="#71a58f"/>
+  <text class="label" x="440" y="403" text-anchor="middle">Role trust policy</text>
+  <text class="detail" x="440" y="425" text-anchor="middle">Defines who can assume the role</text>
+  <rect class="node" x="592" y="376" width="244" height="70" rx="12" fill="#e9e1fa" stroke="#9b82bf"/>
+  <text class="label" x="714" y="403" text-anchor="middle">Role session</text>
+  <text class="detail" x="714" y="425" text-anchor="middle">STS issues temporary credentials</text>
+  <text class="detail" x="177" y="481">IAM user requests</text>
+  <text class="detail" x="703" y="510" text-anchor="end">Role session requests</text>
+  <rect x="44" y="538" width="792" height="60" rx="12" fill="#1c3550"/>
+  <text class="label" x="440" y="562" text-anchor="middle" style="fill:#fff">AWS evaluates each request</text>
+  <text class="detail" x="440" y="584" text-anchor="middle" style="fill:#dbe9f8">Applicable policies and guardrails determine whether the request is allowed.</text>
+</svg>

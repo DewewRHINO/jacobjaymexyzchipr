@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 728" width="880" height="728" role="img" aria-labelledby="title description">
+  <title id="title">How an IAM user gets access in AWS</title>
+  <desc id="description">An IAM user signs into the AWS console or signs CLI and API requests with access keys. The user can make requests as the IAM user, or assume a role if authorized. AWS STS issues temporary credentials for requests made as the role session. AWS evaluates applicable policies for each request.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52657b"/>
+    </marker>
+    <style>
+      text { font-family: system-ui, -apple-system, sans-serif; fill: #15263c; }
+      .title { font-size: 28px; font-weight: 700; }
+      .label { font-size: 18px; font-weight: 700; }
+      .detail { font-size: 15px; fill: #344d66; }
+      .connector { fill: none; stroke: #52657b; stroke-width: 2; }
+      .arrow { marker-end: url(#arrow); }
+      .node { stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="880" height="728" rx="20" fill="#f4f7fb"/>
+  <text class="title" x="440" y="52" text-anchor="middle">How an IAM user gets access in AWS</text>
+
+  <g class="connector">
+    <path class="arrow" d="M440 136 V162"/>
+    <path d="M440 215 V236 H232 M440 236 H648"/>
+    <path class="arrow" d="M232 236 V257"/>
+    <path class="arrow" d="M648 236 V257"/>
+    <path d="M232 331 V352 H648 V331"/>
+    <path class="arrow" d="M440 352 V374"/>
+    <path d="M440 427 V449 H232 M440 449 H648"/>
+    <path class="arrow" d="M232 449 V471"/>
+    <path class="arrow" d="M648 449 V471"/>
+    <path class="arrow" d="M648 539 V565"/>
+    <path class="arrow" d="M232 539 V644"/>
+    <path class="arrow" d="M648 620 V644"/>
+  </g>
+
+  <g text-anchor="middle">
+    <rect class="node" x="316" y="83" width="248" height="53" rx="12" fill="#dceafb" stroke="#729ccc"/>
+    <text class="label" x="440" y="116">IAM user</text>
+
+    <rect class="node" x="316" y="162" width="248" height="53" rx="12" fill="#ffffff" stroke="#a6b7c9"/>
+    <text class="label" x="440" y="195">Authenticate</text>
+
+    <g fill="#fff3d7" stroke="#c6a258">
+      <rect class="node" x="64" y="257" width="336" height="74" rx="12"/>
+      <rect class="node" x="480" y="257" width="336" height="74" rx="12"/>
+    </g>
+    <text class="label" x="232" y="286">AWS Management Console</text>
+    <text class="detail" x="232" y="309">Password and MFA if configured</text>
+    <text class="label" x="648" y="286">AWS CLI or API</text>
+    <text class="detail" x="648" y="309">Access key ID and secret access key</text>
+
+    <rect class="node" x="272" y="374" width="336" height="53" rx="12" fill="#ffffff" stroke="#a6b7c9"/>
+    <text class="label" x="440" y="407">Which identity makes requests?</text>
+
+    <rect class="node" x="64" y="471" width="336" height="68" rx="12" fill="#e9e1fa" stroke="#9b82bf"/>
+    <text class="label" x="232" y="499">Continue as the IAM user</text>
+    <text class="detail" x="232" y="522">Requests use the user’s identity</text>
+
+    <rect class="node" x="480" y="471" width="336" height="68" rx="12" fill="#dff1e9" stroke="#71a58f"/>
+    <text class="label" x="648" y="499">Assume a role, if authorized</text>
+    <text class="detail" x="648" y="522">The role trust policy governs who can assume it</text>
+
+    <rect class="node" x="480" y="565" width="336" height="55" rx="12" fill="#dff1e9" stroke="#71a58f"/>
+    <text class="label" x="648" y="588">AWS STS issues temporary credentials</text>
+    <text class="detail" x="648" y="609">Requests use the role session’s identity</text>
+
+    <rect x="64" y="644" width="752" height="59" rx="12" fill="#1c3550"/>
+    <text class="label" x="440" y="668" style="fill:#fff">AWS evaluates each request</text>
+    <text class="detail" x="440" y="690" style="fill:#dbe9f8">Applicable policies and guardrails determine whether the request is allowed.</text>
+  </g>
+</svg>

@@ -1,0 +1,25 @@
+name: Build Jekyll site
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+      - run: npm ci --ignore-scripts
+      - run: npm run build:css && npm run build:js
+      - run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production

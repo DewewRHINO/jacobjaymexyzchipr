@@ -1,0 +1,30 @@
+---
+title: Escape Room Tier List
+icon: fas fa-puzzle-piece
+order: 5
+---
+
+{% assign tiers = 'S,A,B,C,D' | split: ',' %}
+{% for tier in tiers %}
+  {% assign rooms = site.data.escape_rooms[tier] %}
+  <section aria-labelledby="tier-{{ tier }}">
+    <h2 id="tier-{{ tier }}">{{ tier }} Tier</h2>
+    {% if rooms.size > 0 %}
+      <ul class="list-unstyled">
+        {% for room in rooms %}
+          <li class="mb-3">
+            <strong>{{ room.name | escape }}</strong>
+            {% if room.venue or room.location %}
+              <div class="text-muted">
+                {{ room.venue | escape }}{% if room.venue and room.location %} · {% endif %}{{ room.location | escape }}
+              </div>
+            {% endif %}
+            {% if room.notes %}<div>{{ room.notes | escape }}</div>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No rooms ranked yet.</p>
+    {% endif %}
+  </section>
+{% endfor %}

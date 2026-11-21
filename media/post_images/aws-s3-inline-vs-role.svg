@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 570" width="880" height="570" role="img" aria-labelledby="title description">
+  <title id="title">Listing an S3 bucket as an IAM user or role session</title>
+  <desc id="description">Alice authenticates. With an inline permissions policy on her IAM user, she requests the listing directly as Alice. With the permission on a role, the trust policy allows her to assume BucketLister, STS issues temporary credentials, and she requests the listing as the role session. S3 evaluates applicable policies for both paths.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52657b"/>
+    </marker>
+    <style>
+      text { font-family: system-ui, -apple-system, sans-serif; fill: #15263c; }
+      .title { font-size: 28px; font-weight: 700; }
+      .label { font-size: 18px; font-weight: 700; }
+      .detail { font-size: 15px; fill: #344d66; }
+      .connector { fill: none; stroke: #52657b; stroke-width: 2; }
+      .arrow { marker-end: url(#arrow); }
+      .node { stroke-width: 1.5; }
+    </style>
+  </defs>
+  <rect width="880" height="570" rx="20" fill="#f4f7fb"/>
+  <text class="title" x="440" y="50" text-anchor="middle">Two ways to authorize an S3 object listing</text>
+  <g class="connector">
+    <path d="M440 129 V148 H230 M440 148 H650"/>
+    <path class="arrow" d="M230 148 V200"/>
+    <path class="arrow" d="M650 148 V200"/>
+    <path class="arrow" d="M230 268 V391"/>
+    <path class="arrow" d="M650 268 V298"/>
+    <path class="arrow" d="M650 362 V391"/>
+    <path d="M230 456 V478 H650 V456"/>
+    <path class="arrow" d="M440 478 V497"/>
+  </g>
+  <rect class="node" x="282" y="67" width="316" height="62" rx="12" fill="#dceafb" stroke="#729ccc"/>
+  <text class="label" x="440" y="94" text-anchor="middle">Alice authenticates</text>
+  <text class="detail" x="440" y="116" text-anchor="middle">AWS console or CLI/API</text>
+  <rect x="48" y="158" width="364" height="30" rx="8" fill="#f4f7fb"/>
+  <text class="label" x="230" y="180" text-anchor="middle">Inline</text>
+  <rect x="468" y="158" width="364" height="30" rx="8" fill="#f4f7fb"/>
+  <text class="label" x="650" y="180" text-anchor="middle">Roles</text>
+  <rect class="node" x="48" y="200" width="364" height="68" rx="12" fill="#e9e1fa" stroke="#9b82bf"/>
+  <text class="label" x="230" y="227" text-anchor="middle">Inline policy on Alice</text>
+  <text class="detail" x="230" y="249" text-anchor="middle">Allows s3:ListBucket on the example bucket</text>
+  <rect class="node" x="468" y="200" width="364" height="68" rx="12" fill="#dff1e9" stroke="#71a58f"/>
+  <text class="label" x="650" y="227" text-anchor="middle">Alice assumes BucketLister</text>
+  <text class="detail" x="650" y="249" text-anchor="middle">The role trust policy allows Alice to assume it</text>
+  <rect class="node" x="468" y="298" width="364" height="64" rx="12" fill="#dff1e9" stroke="#71a58f"/>
+  <text class="label" x="650" y="325" text-anchor="middle">AWS STS issues temporary credentials</text>
+  <text class="detail" x="650" y="347" text-anchor="middle">Access key ID, secret access key, and session token</text>
+  <rect class="node" x="48" y="391" width="364" height="65" rx="12" fill="#e9e1fa" stroke="#9b82bf"/>
+  <text class="label" x="230" y="418" text-anchor="middle">Request as Alice</text>
+  <text class="detail" x="230" y="440" text-anchor="middle">AWS evaluates the user’s applicable permissions</text>
+  <rect class="node" x="468" y="391" width="364" height="65" rx="12" fill="#dff1e9" stroke="#71a58f"/>
+  <text class="label" x="650" y="418" text-anchor="middle">Request as the role session</text>
+  <text class="detail" x="650" y="440" text-anchor="middle">The role’s policy allows s3:ListBucket</text>
+  <rect x="138" y="497" width="604" height="55" rx="12" fill="#1c3550"/>
+  <text class="label" x="440" y="521" text-anchor="middle" style="fill:#fff">S3 returns object keys if the request is authorized</text>
+  <text class="detail" x="440" y="541" text-anchor="middle" style="fill:#dbe9f8">Applicable policies and guardrails still apply.</text>
+</svg>

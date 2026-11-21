@@ -1,0 +1,12 @@
+# Add entries under the tier where you want them to appear.
+# Each room needs a name. Venue, location, and notes are optional.
+# Example entry (replace the tier's [] with an indented list):
+#   - name: Room name
+#     venue: Venue name
+#     location: City, State
+#     notes: What made it memorable
+S: []
+A: []
+B: []
+C: []
+D: []
