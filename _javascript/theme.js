@@ -27,7 +27,8 @@ class Theme {
 
   /** @returns {string|null} The theme stored on the client. */
   static get #storedTheme() {
-    return localStorage.getItem(this.#storageKey);
+    const theme = localStorage.getItem(this.#storageKey);
+    return theme === this.Mode.LIGHT || theme === this.Mode.DARK ? theme : null;
   }
 
   /** @returns {string} The theme preferred by the operating system. */

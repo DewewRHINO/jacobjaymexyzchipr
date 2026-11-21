@@ -23,7 +23,7 @@ $enable-dark: v.$theme == dark or $enable-dual;
 }
 
 @if $enable-dual {
-  :root:not([#{v.$theme-attr}]) {
+  :root:not([#{v.$theme-attr}='light']):not([#{v.$theme-attr}='dark']) {
     @include mx.color-scheme(light) {
       @include light.styles;
     }
