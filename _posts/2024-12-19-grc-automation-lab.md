@@ -1,5 +1,5 @@
 ---
-title: "GRC Automation Lab"
+title: "Home Lab PCI Compliant :D"
 description: "GRC Automation Lab"
 permalink: "/2/"
 date: "2024-12-19 06:00:00 +0000"

@@ -1,5 +1,5 @@
 ---
-title: Automation
+title: GRC Artifact Automation
 permalink: /lab-notes/evidence-automation/
 categories: [Labs]
 ---
